@@ -3,7 +3,6 @@ FROM python:stretch
 COPY . /app
 WORKDIR /app
 
-RUN apt-get update -y
 RUN pip install --upgrade pip
 RUN pip install flask
 RUN pip install -r requirements.txt

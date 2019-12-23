@@ -1,7 +1,9 @@
 ---
 version: 0.2
 
-
+env:
+  parameter-store:
+    JWT_SECRET: JWT_SECRET
 phases:
   install:
     commands:
@@ -18,7 +20,7 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
-      - docker build --tag $REPOSITORY_URI:$TAG .
+      - docker build --tag fsnddeploy:v1 .
 
   post_build:
     commands:
